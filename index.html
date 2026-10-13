@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sweet Crumbs Bakery - Handcrafted artisan cakes, French pastries, sourdough breads, and sweet treats in Pakistan. Made fresh daily with pure butter and love.">
+  <title>Sweet Crumbs Bakery | Freshly Baked Happiness, Every Day</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  
+  <!-- Google Fonts: Playfair Display & Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       TOP ANNOUNCEMENT BAR
+       ======================================================================== -->
+  <aside class="top-bar" aria-label="Bakery Announcements">
+    <div class="container top-bar-inner">
+      <div class="top-bar-message">
+        <span class="top-bar-badge">Fresh Batch</span>
+        <span>✨ Handcrafted morning bakes are ready! Free delivery in Clifton & DHA on orders over PKR 2,500</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="tel:+9221111222333" class="top-bar-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          +92 (21) 111-222-333
+        </a>
+        <span style="opacity: 0.4;">|</span>
+        <span class="top-bar-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Open 8:00 AM - 11:00 PM Daily
+        </span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       1. NAVIGATION BAR
+       ======================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-container">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="Sweet Crumbs Bakery Home">
+        <img src="images/logo.svg" alt="Sweet Crumbs Bakery Emblem" class="brand-logo-img">
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="menu.html" class="nav-link">Our Menu</a>
+        <a href="menu.html#birthday-cakes" class="nav-link">Special Cakes</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav Actions (Search, Cart, Order CTA, Hamburger) -->
+      <div class="nav-actions">
+        <!-- Search Button -->
+        <button type="button" class="action-btn" onclick="openSearchModal()" aria-label="Search bakery items">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+
+        <!-- Cart Trigger Button -->
+        <button type="button" class="action-btn" onclick="openCartDrawer()" aria-label="View shopping cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-count" style="display: none;">0</span>
+        </button>
+
+        <!-- Order Now CTA -->
+        <a href="menu.html" class="btn btn-primary btn-sm" style="display: inline-flex;">Order Now</a>
+
+        <!-- Hamburger Mobile Button -->
+        <button type="button" class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileNav()" aria-label="Toggle navigation menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav" id="mobile-nav" onclick="if(event.target === this) closeMobileNav();">
+    <div class="mobile-nav-panel">
+      <div class="mobile-nav-header">
+        <a href="index.html" class="brand-logo" onclick="closeMobileNav()">
+          <img src="images/logo.svg" alt="Sweet Crumbs Bakery" style="height: 42px;">
+        </a>
+        <button type="button" class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Close menu">&times;</button>
+      </div>
+
+      <div class="mobile-menu-links">
+        <a href="index.html" class="mobile-menu-link active" onclick="closeMobileNav()">Home</a>
+        <a href="about.html" class="mobile-menu-link" onclick="closeMobileNav()">About Us</a>
+        <a href="menu.html" class="mobile-menu-link" onclick="closeMobileNav()">Our Menu</a>
+        <a href="menu.html#birthday-cakes" class="mobile-menu-link" onclick="closeMobileNav()">Special Cakes</a>
+        <a href="cart.html" class="mobile-menu-link" onclick="closeMobileNav()">My Cart</a>
+        <a href="checkout.html" class="mobile-menu-link" onclick="closeMobileNav()">Checkout</a>
+        <a href="contact.html" class="mobile-menu-link" onclick="closeMobileNav()">Contact</a>
+      </div>
+
+      <div style="margin-bottom: 24px;">
+        <button type="button" class="btn btn-primary" style="width: 100%;" onclick="openCustomCakeModal(); closeMobileNav();">
+          🎂 Customize Your Cake
+        </button>
+      </div>
+
+      <div class="mobile-nav-contact">
+        <p>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Clifton Block 5, Karachi, Pakistan
+        </p>
+        <p>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          +92 (21) 111-222-333
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ========================================================================
+         2. HERO SECTION
+         ======================================================================== -->
+    <section class="hero-section" aria-labelledby="hero-heading">
+      <div class="hero-bg-accent" aria-hidden="true"></div>
+      <div class="hero-bg-accent-2" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-eyebrow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span>Artisan Bakery & Patisserie • Since 2018</span>
+          </div>
+
+          <h1 class="hero-title" id="hero-heading">
+            Freshly Baked <span>Happiness</span>, Every Day
+          </h1>
+
+          <p class="hero-subtitle">
+            Handcrafted cakes, delightful pastries, and freshly baked treats made with love, Normandy butter, and pure passion.
+          </p>
+
+          <div class="hero-actions">
+            <a href="menu.html" class="btn btn-primary">
+              <span>Explore Our Menu</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <button type="button" class="btn btn-outline" onclick="openCustomCakeModal()">
+              <span>Order Your Favorite</span>
+            </button>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="hero-trust-row">
+            <div class="trust-item">
+              <div class="trust-icon">✓</div>
+              <span>100% Halal Ingredients</span>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">🌾</div>
+              <span>Pure Normandy Butter</span>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">⚡</div>
+              <span>Same-Day Local Delivery</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Media with Floating Badges -->
+        <div class="hero-media">
+          <div class="hero-image-wrapper">
+            <img src="images/hero-cake.jpg" alt="Artisan celebration cake crafted at Sweet Crumbs Bakery" class="hero-img">
+          </div>
+
+          <!-- Top-Left Floating Badge -->
+          <div class="hero-floating-card card-top-left">
+            <div class="badge-icon-wrap">⭐</div>
+            <div>
+              <div class="badge-text-title">4.9 / 5 Rating</div>
+              <div class="badge-text-sub">Over 2,500 Happy Foodies</div>
+            </div>
+          </div>
+
+          <!-- Bottom-Right Floating Badge -->
+          <div class="hero-floating-card card-bottom-right">
+            <div class="badge-icon-wrap" style="background: #FFF7EB; color: #5A3025;">🥐</div>
+            <div>
+              <div class="badge-text-title">Fresh at 8:00 AM</div>
+              <div class="badge-text-sub">Baked in Small Daily Batches</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         3. POPULAR CATEGORIES
+         ======================================================================== -->
+    <section class="categories-section" id="categories" aria-labelledby="cat-heading">
+      <div class="container">
+        
+        <header class="section-header">
+          <span class="section-tag">Taste The Tradition</span>
+          <h2 class="section-title" id="cat-heading">Popular Categories</h2>
+          <p class="section-subtitle">Explore our delicious range of freshly prepared desserts, cakes, and viennoiserie.</p>
+          <div class="title-ornament" aria-hidden="true">
+            <span></span>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            <span></span>
+          </div>
+        </header>
+
+        <div class="categories-grid">
+          <!-- 1. Birthday Cakes -->
+          <a href="menu.html#birthday-cakes" class="category-card">
+            <img src="images/cat-birthday-cakes.jpg" alt="Birthday Cakes" class="category-card-bg" loading="lazy">
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <span class="category-count">Celebrations</span>
+              <h3 class="category-title">Birthday Cakes</h3>
+              <span class="category-link-text">Browse Flavors &rarr;</span>
+            </div>
+          </a>
+
+          <!-- 2. Wedding Cakes -->
+          <a href="menu.html#wedding-cakes" class="category-card">
+            <img src="images/cat-wedding-cakes.jpg" alt="Wedding Cakes" class="category-card-bg" loading="lazy">
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <span class="category-count">Luxury Tiered</span>
+              <h3 class="category-title">Wedding Cakes</h3>
+              <span class="category-link-text">Custom Consultations &rarr;</span>
+            </div>
+          </a>
+
+          <!-- 3. Cupcakes -->
+          <a href="menu.html#cupcakes" class="category-card">
+            <img src="images/cat-cupcakes.jpg" alt="Cupcakes" class="category-card-bg" loading="lazy">
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <span class="category-count">Bite-Sized Joy</span>
+              <h3 class="category-title">Cupcakes</h3>
+              <span class="category-link-text">Packs & Singles &rarr;</span>
+            </div>
+          </a>
+
+          <!-- 4. Donuts -->
+          <a href="menu.html#donuts" class="category-card">
+            <img src="images/cat-donuts.jpg" alt="Donuts" class="category-card-bg" loading="lazy">
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <span class="category-count">Brioche Dough</span>
+              <h3 class="category-title">Donuts</h3>
+              <span class="category-link-text">Glazed & Filled &rarr;</span>
+            </div>
+          </a>
+
+          <!-- 5. Cookies -->
+          <a href="menu.html#cookies" class="category-card">
+            <img src="images/cat-cookies.jpg" alt="Cookies" class="category-card-bg" loading="lazy">
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <span class="category-count">Soft & Chewy</span>
+              <h3 class="category-title">Cookies</h3>
+              <span class="category-link-text">Cookie Tins &rarr;</span>
+            </div>
+          </a>
+
+          <!-- 6. Fresh Bread -->
+          <a href="menu.html#bread" class="category-card">
+            <img src="images/cat-bread.jpg" alt="Fresh Bread" class="category-card-bg" loading="lazy">
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <span class="category-count">Wild Ferment</span>
+              <h3 class="category-title">Fresh Bread</h3>
+              <span class="category-link-text">Sourdough & Loaves &rarr;</span>
+            </div>
+          </a>
+
+          <!-- 7. Croissants -->
+          <a href="menu.html#croissants" class="category-card">
+            <img src="images/cat-croissants.jpg" alt="Croissants" class="category-card-bg" loading="lazy">
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <span class="category-count">Viennoiserie</span>
+              <h3 class="category-title">Croissants</h3>
+              <span class="category-link-text">Flaky Pastry &rarr;</span>
+            </div>
+          </a>
+
+          <!-- 8. Pastries -->
+          <a href="menu.html#pastries" class="category-card">
+            <img src="images/cat-pastries.jpg" alt="Pastries" class="category-card-bg" loading="lazy">
+            <div class="category-card-overlay"></div>
+            <div class="category-card-content">
+              <span class="category-count">French Tarts</span>
+              <h3 class="category-title">Pastries</h3>
+              <span class="category-link-text">Fruit Tarts & Eclairs &rarr;</span>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         4. BESTSELLING PRODUCTS
+         ======================================================================== -->
+    <section class="bestsellers-section" id="bestsellers" aria-labelledby="best-heading">
+      <div class="container">
+        
+        <header class="section-header">
+          <span class="section-tag">Chef's Recommendations</span>
+          <h2 class="section-title" id="best-heading">Bestselling Treats</h2>
+          <p class="section-subtitle">Our customer-voted signature recipes, prepared fresh from scratch every dawn.</p>
+          <div class="title-ornament" aria-hidden="true">
+            <span></span>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            <span></span>
+          </div>
+        </header>
+
+        <!-- Product Toolbar (Category Filters & Sorting) -->
+        <div class="products-toolbar">
+          <div class="filter-pills" role="tablist" aria-label="Product Categories">
+            <button type="button" class="filter-pill active" data-category="all" onclick="filterProducts('all')">All Treats</button>
+            <button type="button" class="filter-pill" data-category="birthday-cakes" onclick="filterProducts('birthday-cakes')">Cakes</button>
+            <button type="button" class="filter-pill" data-category="cupcakes" onclick="filterProducts('cupcakes')">Cupcakes</button>
+            <button type="button" class="filter-pill" data-category="cookies" onclick="filterProducts('cookies')">Cookies</button>
+            <button type="button" class="filter-pill" data-category="donuts" onclick="filterProducts('donuts')">Donuts</button>
+            <button type="button" class="filter-pill" data-category="croissants" onclick="filterProducts('croissants')">Croissants</button>
+            <button type="button" class="filter-pill" data-category="pastries" onclick="filterProducts('pastries')">Pastries</button>
+          </div>
+
+          <div class="sort-wrapper">
+            <label for="product-sort" class="sort-label">Sort by:</label>
+            <select id="product-sort" class="sort-select" onchange="sortProducts(this.value)">
+              <option value="featured">Featured Selection</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Customer Rating</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Dynamic Product Cards Grid -->
+        <div class="products-grid" id="bestsellers-grid">
+          <!-- Populated dynamically via js/script.js -->
+        </div>
+
+        <div style="text-align: center; margin-top: 50px;">
+          <a href="menu.html" class="btn btn-outline">
+            <span>Explore Full Bakery Menu (12+ Delicacies)</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         5. CUSTOM CAKE SECTION
+         ======================================================================== -->
+    <section class="custom-cake-section" id="custom-cakes" aria-labelledby="custom-heading">
+      <div class="custom-cake-bg-pattern" aria-hidden="true"></div>
+
+      <div class="container custom-cake-grid">
+        <div class="custom-cake-content">
+          <span class="section-tag">Bespoke Celebrations</span>
+          <h2 class="custom-cake-title" id="custom-heading">Your Dream Cake, Made Just for You</h2>
+          <p class="custom-cake-desc">
+            Whether it’s a fairytale wedding, a milestone birthday, or an intimate anniversary, our master decorators turn your vision into an unforgettable confection.
+          </p>
+
+          <div class="custom-cake-pills">
+            <div class="custom-pill">
+              <span class="custom-pill-icon">🎉</span>
+              <div class="custom-pill-text">
+                <h4>Birthday Cakes</h4>
+                <p>Whimsical themes & custom toppers</p>
+              </div>
+            </div>
+            <div class="custom-pill">
+              <span class="custom-pill-icon">💍</span>
+              <div class="custom-pill-text">
+                <h4>Wedding Cakes</h4>
+                <p>Multi-tiered floral architecture</p>
+              </div>
+            </div>
+            <div class="custom-pill">
+              <span class="custom-pill-icon">🌹</span>
+              <div class="custom-pill-text">
+                <h4>Anniversary Cakes</h4>
+                <p>Romantic gold-leaf accents</p>
+              </div>
+            </div>
+            <div class="custom-pill">
+              <span class="custom-pill-icon">📸</span>
+              <div class="custom-pill-text">
+                <h4>Photo & Theme Cakes</h4>
+                <p>Edible high-def sugar prints</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <button type="button" class="btn btn-accent" onclick="openCustomCakeModal()">
+              <span>Customize Your Cake</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+            <a href="contact.html" class="btn btn-outline-white">
+              <span>Speak to Our Cake Artist</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="custom-cake-media">
+          <div class="custom-cake-img-wrap">
+            <img src="images/custom-cake-bg.jpg" alt="Artisan custom cake craftsmanship" loading="lazy">
+          </div>
+          <div class="custom-cake-badge-floating">
+            <div class="badge-num">1,200+</div>
+            <div class="badge-lbl">
+              Custom Cakes<br>Handcrafted with Joy
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         6. ABOUT OUR BAKERY
+         ======================================================================== -->
+    <section class="about-section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        
+        <div class="about-grid">
+          <div class="about-media-collage">
+            <img src="images/about-bakery.jpg" alt="Sweet Crumbs master baker preparing sourdough dough" class="about-img-main" loading="lazy">
+            <img src="images/about-craft.jpg" alt="Decorating artisan pastry with fresh cream" class="about-img-sub" loading="lazy">
+          </div>
+
+          <div class="about-text-content">
+            <span class="section-tag">Our Heritage & Passion</span>
+            <h2 class="section-title" id="about-heading">Baked with Love, Served with Happiness</h2>
+            <p class="about-lead">
+              Founded in 2018 in Karachi, Sweet Crumbs Bakery was born from a simple devotion: to revive honest, small-batch European baking traditions using pure, uncompromised ingredients.
+            </p>
+            <p class="about-desc">
+              Every morning at 4:00 AM, our ovens come alive. We never use artificial preservatives, chemical premixes, or vegetable shortenings. Instead, we knead with 100% Normandy butter, farm-fresh eggs, raw cane sugars, and authentic Belgian couvertures. For us, every crumb tells a story of care and warmth.
+            </p>
+
+            <div class="about-stats">
+              <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Halal & Pure Butter</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Signature Recipes</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">25,000+</div>
+                <div class="stat-label">Happy Customers</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Feature Cards Required -->
+        <div class="features-grid">
+          <!-- Card 1 -->
+          <article class="feature-card">
+            <div class="feature-icon-box">🌾</div>
+            <h3 class="feature-title">Fresh Ingredients</h3>
+            <p class="feature-desc">
+              We source unbleached stone-ground wheat, imported Normandy butter, organic Madagascar vanilla beans, and seasonal local fruits harvested at peak sweetness.
+            </p>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="feature-card">
+            <div class="feature-icon-box">❤️</div>
+            <h3 class="feature-title">Handmade with Love</h3>
+            <p class="feature-desc">
+              No industrial assembly lines. Every croissant is hand-rolled with 27 micro-layers, and every cake is frosted and piped with patient artisanal craftsmanship.
+            </p>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="feature-card">
+            <div class="feature-icon-box">⭐</div>
+            <h3 class="feature-title">Quality You Can Trust</h3>
+            <p class="feature-desc">
+              From our temperature-monitored kitchen to sealed food-grade packaging and swift local dispatch, we guarantee your treats arrive as fresh as when they left our ovens.
+            </p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         7. SPECIAL OFFERS BANNER
+         ======================================================================== -->
+    <section class="offers-section" aria-labelledby="offers-heading">
+      <div class="container">
+        
+        <div class="offer-banner-card">
+          <div class="offer-banner-grid">
+            <div class="offer-banner-content">
+              <span class="offer-badge">Limited Time Celebration</span>
+              <h2 class="offer-title" id="offers-heading">Sweet Deals, Sweeter Moments</h2>
+              <p class="offer-subtitle">
+                Discover special offers on your favorite bakery treats. Order your celebration cake or morning pastry bundle and enjoy 10% off your entire basket!
+              </p>
+
+              <div class="offer-code-box">
+                <span class="offer-code-lbl">PROMO CODE:</span>
+                <span class="offer-code-val">SWEET10</span>
+                <button type="button" class="copy-code-btn" onclick="copyPromoCode('SWEET10')">Copy Code</button>
+              </div>
+
+              <div>
+                <a href="menu.html" class="btn btn-accent">
+                  <span>Shop Offers Now</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <div class="offer-media">
+              <img src="images/special-offer.jpg" alt="Delightful dessert spreads and bakery specials" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         8. CUSTOMER REVIEWS (TESTIMONIALS SLIDER)
+         ======================================================================== -->
+    <section class="reviews-section" id="reviews" aria-labelledby="review-heading">
+      <div class="container">
+        
+        <header class="section-header">
+          <span class="section-tag">Words from the Heart</span>
+          <h2 class="section-title" id="review-heading">Loved by Dessert Enthusiasts</h2>
+          <p class="section-subtitle">Real experiences and sweet moments shared by our valued patrons across Pakistan.</p>
+          <div class="title-ornament" aria-hidden="true">
+            <span></span>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            <span></span>
+          </div>
+        </header>
+
+        <div class="testimonial-slider-container">
+          <div class="testimonial-card-wrapper" id="testimonial-slides-wrap">
+            <!-- Populated dynamically via js/script.js -->
+          </div>
+
+          <!-- Slider Controls -->
+          <div class="slider-controls">
+            <button type="button" class="slider-btn" onclick="prevTestimonial()" aria-label="Previous testimonial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <div class="slider-dots" id="slider-dots-wrap">
+              <!-- Dots dynamically populated -->
+            </div>
+            <button type="button" class="slider-btn" onclick="nextTestimonial()" aria-label="Next testimonial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         9. NEWSLETTER SECTION
+         ======================================================================== -->
+    <section class="newsletter-section" aria-labelledby="newsletter-heading">
+      <div class="container">
+        
+        <div class="newsletter-box">
+          <div class="newsletter-icon">💌</div>
+          <h2 class="newsletter-title" id="newsletter-heading">A Little Sweetness in Your Inbox</h2>
+          <p class="newsletter-desc">
+            Subscribe to our weekly baker's dispatch. Receive secret seasonal recipes, early access to festive cakes, and exclusive subscriber discounts.
+          </p>
+
+          <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+            <input type="email" class="newsletter-input" placeholder="Enter your email address (e.g., name@gmail.com)" required aria-label="Email Address">
+            <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+          </form>
+
+          <p class="newsletter-disclaimer">
+            🔒 We respect your privacy. No spam ever. (Demo newsletter form - no external emails are dispatched).
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         10. CONTACT SECTION PREVIEW
+         ======================================================================== -->
+    <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        
+        <header class="section-header">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="section-title" id="contact-heading">Visit Us or Say Hello</h2>
+          <p class="section-subtitle">We would love to welcome you to our shop or help you plan your next sweet celebration.</p>
+        </header>
+
+        <div class="contact-grid">
+          <!-- Contact Info -->
+          <div class="contact-info-card">
+            <h3 class="card-title">Sweet Crumbs Flagship</h3>
+            <p class="card-desc">Step into our cozy boutique patisserie where the aroma of cinnamon, freshly roasted espresso, and caramel greets you at the door.</p>
+
+            <div class="info-items-list">
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="info-text">
+                  <h4>Bakery Address (Sample)</h4>
+                  <p>Shop 14, Block 5, Clifton, Karachi, Sindh, Pakistan</p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                </div>
+                <div class="info-text">
+                  <h4>Order Hotline & WhatsApp</h4>
+                  <p><a href="tel:+9221111222333">+92 (21) 111-222-333</a></p>
+                  <p><a href="https://wa.me/923001234567" target="_blank" rel="noopener">+92 300 1234567 (WhatsApp Orders)</a></p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div class="info-text">
+                  <h4>Customer Support Email</h4>
+                  <p><a href="mailto:hello@sweetcrumbsbakery.pk">hello@sweetcrumbsbakery.pk</a></p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div class="info-text">
+                  <h4>Store Opening Hours</h4>
+                  <p>Monday - Sunday: 8:00 AM - 11:00 PM</p>
+                  <p style="font-size:0.8rem; color:var(--accent-dark);">Baking fresh twice daily: 8:00 AM & 3:30 PM</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-socials-wrap">
+              <div class="socials-title">Follow Our Kitchen Journey</div>
+              <div class="social-links">
+                <a href="https://instagram.com" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+                <a href="https://facebook.com" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                </a>
+                <a href="https://wa.me/923001234567" class="social-btn" aria-label="WhatsApp" target="_blank" rel="noopener">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Message Form -->
+          <div class="contact-form-wrap">
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--primary); margin-bottom: 8px;">Send Us a Message</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 24px;">Have a special inquiry, event catering request, or feedback? Drop us a line below.</p>
+
+            <form onsubmit="handleContactSubmit(event)">
+              <div class="form-group-grid">
+                <div class="form-group">
+                  <label class="form-label" for="contact-name">Full Name <span class="req">*</span></label>
+                  <input type="text" id="contact-name" name="contact-name" class="form-control" placeholder="e.g. Ayesha Khan" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-email">Email Address <span class="req">*</span></label>
+                  <input type="email" id="contact-email" name="contact-email" class="form-control" placeholder="e.g. ayesha@gmail.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-subject">Subject</label>
+                <input type="text" id="contact-subject" name="contact-subject" class="form-control" placeholder="e.g. Wedding Cake Consultation / General Inquiry">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-message">Your Message <span class="req">*</span></label>
+                <textarea id="contact-message" name="contact-message" class="form-control" rows="4" placeholder="Tell us how we can help make your day sweeter..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <span>Send Message</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+
+              <p class="form-disclaimer">
+                * Note: Sample contact form for frontend demonstration.
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <!-- Simulated Map Placeholder -->
+        <div class="map-container" aria-label="Bakery Location Map Placeholder">
+          <div class="map-placeholder-box">
+            <div class="map-pin-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3 class="map-title">Sweet Crumbs Clifton Boutique</h3>
+            <p class="map-desc">Shop 14, Block 5, Clifton, Karachi, Pakistan. Valet parking available. Takeaway, dine-in patisserie & dessert counter.</p>
+            <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+              Open in Google Maps
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       13. FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 12px;">
+            <img src="images/logo.svg" alt="Sweet Crumbs Bakery" class="brand-logo-img">
+          </a>
+          <p class="footer-desc">
+            Sweet Crumbs Bakery is a premium patisserie and artisan bakery founded on passion, pure Normandy butter, and unforgettable culinary moments.
+          </p>
+          <div class="social-links">
+            <a href="https://instagram.com" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://facebook.com" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="https://wa.me/923001234567" class="social-btn" aria-label="WhatsApp" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home Page</a></li>
+            <li><a href="about.html" class="footer-link">About Our Bakery</a></li>
+            <li><a href="menu.html" class="footer-link">Full Bakery Menu</a></li>
+            <li><a href="cart.html" class="footer-link">My Shopping Cart</a></li>
+            <li><a href="checkout.html" class="footer-link">Checkout</a></li>
+            <li><a href="contact.html" class="footer-link">Contact & Locations</a></li>
+          </ul>
+        </div>
+
+        <!-- Categories -->
+        <div>
+          <h4 class="footer-title">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="menu.html#birthday-cakes" class="footer-link">Birthday Cakes</a></li>
+            <li><a href="menu.html#wedding-cakes" class="footer-link">Wedding Cakes</a></li>
+            <li><a href="menu.html#cupcakes" class="footer-link">Gourmet Cupcakes</a></li>
+            <li><a href="menu.html#donuts" class="footer-link">Artisan Donuts</a></li>
+            <li><a href="menu.html#croissants" class="footer-link">French Croissants</a></li>
+            <li><a href="menu.html#bread" class="footer-link">Fresh Sourdough</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Placeholders -->
+        <div>
+          <h4 class="footer-title">Karachi Bakery Shop</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Shop 14, Block 5, Clifton, Karachi, Pakistan (Sample)</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>+92 (21) 111-222-333</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>hello@sweetcrumbsbakery.pk</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Mon - Sun: 8:00 AM - 11:00 PM</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <p>© 2026 Sweet Crumbs Bakery. All rights reserved. Handcrafted with passion in Pakistan.</p>
+          <p style="opacity: 0.8; font-size: 0.76rem;">Demonstration Portfolio Project. All business details, prices, and orders are samples.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       11. SHOPPING CART DRAWER (SLIDE-OUT)
+       ======================================================================== -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay" onclick="if(event.target === this) closeCartDrawer();">
+    <aside class="cart-drawer" aria-label="Shopping Cart Drawer">
+      <div class="cart-header">
+        <div class="cart-header-title">
+          <span>🍰 Your Sweet Basket</span>
+        </div>
+        <button type="button" class="cart-close-btn" onclick="closeCartDrawer()" aria-label="Close cart">&times;</button>
+      </div>
+
+      <!-- Free Shipping Meter -->
+      <div class="free-shipping-meter" id="drawer-shipping-meter">
+        <!-- Rendered by js/script.js -->
+      </div>
+
+      <!-- Cart Items Container -->
+      <div class="cart-items-body" id="drawer-items-list">
+        <!-- Rendered by js/script.js -->
+      </div>
+
+      <!-- Cart Footer -->
+      <div class="cart-footer" id="drawer-footer">
+        <div class="cart-totals-row">
+          <span>Subtotal:</span>
+          <strong id="drawer-subtotal">PKR 0</strong>
+        </div>
+        <div class="cart-totals-row">
+          <span>Estimated Delivery:</span>
+          <span id="drawer-delivery">PKR 0</span>
+        </div>
+        <div class="cart-totals-row grand-total">
+          <span>Total:</span>
+          <strong id="drawer-total" style="color: var(--primary);">PKR 0</strong>
+        </div>
+
+        <div class="cart-actions-box">
+          <a href="checkout.html" class="btn btn-primary" style="width: 100%;">Proceed to Checkout</a>
+          <a href="cart.html" class="btn btn-outline btn-sm" style="width: 100%;">View Full Cart Page</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ========================================================================
+       QUICK VIEW MODAL
+       ======================================================================== -->
+  <div class="modal-overlay" id="quick-view-modal" onclick="if(event.target === this) closeAllModals();">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" onclick="closeAllModals()" aria-label="Close modal">&times;</button>
+      <div class="modal-card-content">
+        <!-- Dynamic content filled by openQuickView() in js/script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       CUSTOM CAKE MODAL
+       ======================================================================== -->
+  <div class="modal-overlay" id="custom-cake-modal" onclick="if(event.target === this) closeAllModals();">
+    <div class="modal-card" style="max-width: 680px; padding: 36px 32px;">
+      <button type="button" class="modal-close-btn" onclick="closeAllModals()" aria-label="Close modal">&times;</button>
+      
+      <div style="text-align: center; margin-bottom: 24px;">
+        <span class="section-tag" style="margin-bottom: 8px;">Bespoke Confection</span>
+        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--primary);">Design Your Dream Cake</h2>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">Tell us about your celebration theme and our pastry artists will bring it to life.</p>
+      </div>
+
+      <form onsubmit="handleCustomCakeSubmit(event)">
+        <div class="form-group-grid">
+          <div class="form-group">
+            <label class="form-label" for="custom-name">Full Name <span class="req">*</span></label>
+            <input type="text" id="custom-name" name="customer-name" class="form-control" placeholder="e.g. Sana Mir" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="custom-phone">Phone Number (PK) <span class="req">*</span></label>
+            <input type="tel" id="custom-phone" name="customer-phone" class="form-control" placeholder="0300-1234567" required>
+          </div>
+        </div>
+
+        <div class="form-group-grid">
+          <div class="form-group">
+            <label class="form-label" for="custom-type">Cake Occasion / Type <span class="req">*</span></label>
+            <select id="custom-type" name="cake-type" class="form-control" required>
+              <option value="">Select Cake Type</option>
+              <option value="Birthday Cake">Birthday Celebration Cake</option>
+              <option value="Wedding Cake">Royal Wedding Tier Cake</option>
+              <option value="Anniversary Cake">Anniversary Romantic Cake</option>
+              <option value="Theme Cake">Customized Theme / Character Cake</option>
+              <option value="Photo Cake">Edible Sugar Photo Cake</option>
+              <option value="Baby Shower / Gender Reveal">Baby Shower / Gender Reveal</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="custom-size">Size / Weight <span class="req">*</span></label>
+            <select id="custom-size" name="cake-size" class="form-control" required>
+              <option value="">Select Cake Size</option>
+              <option value="1.5 lbs">1.5 lbs (Serves 4-6)</option>
+              <option value="2.0 lbs">2.0 lbs (Serves 8-10)</option>
+              <option value="3.0 lbs">3.0 lbs (Serves 12-15)</option>
+              <option value="4.0 lbs">4.0 lbs (Serves 18-20)</option>
+              <option value="2-Tier (5.0 lbs)">2-Tier 5.0 lbs (Serves 25-30)</option>
+              <option value="3-Tier (8.0 lbs)">3-Tier 8.0 lbs (Serves 40-50)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group-grid">
+          <div class="form-group">
+            <label class="form-label" for="custom-flavor">Sponge & Filling Flavor <span class="req">*</span></label>
+            <select id="custom-flavor" name="cake-flavor" class="form-control" required>
+              <option value="">Select Flavor</option>
+              <option value="Belgian Chocolate Fudge">Belgian Chocolate Fudge</option>
+              <option value="Red Velvet with Cream Cheese">Red Velvet with Cream Cheese</option>
+              <option value="Lotus Biscoff Salted Caramel">Lotus Biscoff & Salted Caramel</option>
+              <option value="Madagascar Bourbon Vanilla Bean">Madagascar Bourbon Vanilla Bean</option>
+              <option value="Ferrero Rocher Nutella Crunch">Ferrero Rocher Nutella Crunch</option>
+              <option value="Fresh Strawberry & Chantilly Cream">Fresh Strawberry & Chantilly Cream</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="custom-cake-date">Required Delivery Date <span class="req">*</span></label>
+            <input type="date" id="custom-cake-date" name="cake-date" class="form-control" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="custom-desc">Design Description & Inscription <span class="req">*</span></label>
+          <textarea id="custom-desc" name="cake-desc" class="form-control" rows="3" placeholder="Describe the colors, decorations, message to write on cake (e.g. 'Happy 25th Birthday Zara!'), or theme..." required></textarea>
+        </div>
+
+        <div style="background: var(--cream-surface); border: 1px solid var(--border-light); border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 20px; font-size: 0.8rem; color: var(--text-muted);">
+          ℹ️ <strong>Demo Notice:</strong> Submitting this form creates a simulated sample cake request. In our live bakery, our decorator contacts you via WhatsApp within 30 minutes.
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+          <span>Submit Custom Cake Request</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Custom Cake Confirmation Modal -->
+  <div class="modal-overlay" id="custom-cake-confirm-modal" onclick="if(event.target === this) closeAllModals();">
+    <div class="modal-card" style="max-width: 520px; padding: 40px 32px; text-align: center;">
+      <div style="width: 72px; height: 72px; border-radius: 50%; background: var(--blush); color: var(--primary); font-size: 2.2rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+        🎂
+      </div>
+      <h2 style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--primary); margin-bottom: 10px;">Custom Request Received!</h2>
+      <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 20px;">
+        Thank you, <strong id="confirm-customer-name"></strong>! Your bespoke cake request has been registered in our kitchen schedule.
+      </p>
+
+      <div style="background: var(--cream-surface); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 18px; margin-bottom: 24px; text-align: left; font-size: 0.88rem;">
+        <div style="margin-bottom: 8px;"><strong>Request Reference:</strong> <span id="confirm-req-id" style="color: var(--accent-dark); font-weight: 700;">#REQ-10293</span></div>
+        <div><strong>Specifications:</strong> <span id="confirm-cake-summary"></span></div>
+      </div>
+
+      <p style="font-size: 0.8rem; color: var(--text-light); margin-bottom: 24px;">
+        * This is a sample confirmation. Real-time bakeries connect to backend databases and payment systems.
+      </p>
+
+      <button type="button" class="btn btn-primary" onclick="closeAllModals()" style="width: 100%;">Back to Bakery</button>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       SEARCH MODAL
+       ======================================================================== -->
+  <div class="modal-overlay" id="search-modal" onclick="if(event.target === this) closeAllModals();">
+    <div class="modal-card search-modal-card">
+      <button type="button" class="modal-close-btn" onclick="closeAllModals()" aria-label="Close search">&times;</button>
+      
+      <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-bottom: 16px;">Search Sweet Crumbs Bakery</h3>
+      
+      <div class="search-input-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="search-query-input" placeholder="Search cakes, cookies, donuts, croissants..." oninput="handleSearchInput(event)" aria-label="Search input">
+      </div>
+
+      <div class="search-results-list" id="search-results-list">
+        <!-- Rendered live by js/script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- Main JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>

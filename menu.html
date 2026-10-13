@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the full handcrafted menu of Sweet Crumbs Bakery: celebration cakes, Parisian macarons, artisan sourdough, buttery croissants, and brioche donuts.">
+  <title>Our Menu | Sweet Crumbs Bakery</title>
+  
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-message">
+        <span class="top-bar-badge">Order Online</span>
+        <span>✨ All orders baked fresh to order! Free delivery in Clifton & DHA on orders over PKR 2,500</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="tel:+9221111222333" class="top-bar-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          +92 (21) 111-222-333
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Sweet Crumbs Bakery Home">
+        <img src="images/logo.svg" alt="Sweet Crumbs Bakery" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="menu.html" class="nav-link active">Our Menu</a>
+        <a href="menu.html#birthday-cakes" class="nav-link">Special Cakes</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="action-btn" onclick="openSearchModal()" aria-label="Search bakery items">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+
+        <button type="button" class="action-btn" onclick="openCartDrawer()" aria-label="View shopping cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-count" style="display: none;">0</span>
+        </button>
+
+        <button type="button" class="btn btn-primary btn-sm" onclick="openCustomCakeModal()">Custom Cake</button>
+
+        <button type="button" class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileNav()" aria-label="Toggle navigation menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav" id="mobile-nav" onclick="if(event.target === this) closeMobileNav();">
+    <div class="mobile-nav-panel">
+      <div class="mobile-nav-header">
+        <a href="index.html" class="brand-logo" onclick="closeMobileNav()">
+          <img src="images/logo.svg" alt="Sweet Crumbs Bakery" style="height: 42px;">
+        </a>
+        <button type="button" class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Close menu">&times;</button>
+      </div>
+      <div class="mobile-menu-links">
+        <a href="index.html" class="mobile-menu-link" onclick="closeMobileNav()">Home</a>
+        <a href="about.html" class="mobile-menu-link" onclick="closeMobileNav()">About Us</a>
+        <a href="menu.html" class="mobile-menu-link active" onclick="closeMobileNav()">Our Menu</a>
+        <a href="cart.html" class="mobile-menu-link" onclick="closeMobileNav()">My Cart</a>
+        <a href="checkout.html" class="mobile-menu-link" onclick="closeMobileNav()">Checkout</a>
+        <a href="contact.html" class="mobile-menu-link" onclick="closeMobileNav()">Contact</a>
+      </div>
+      <button type="button" class="btn btn-primary" style="width: 100%;" onclick="openCustomCakeModal(); closeMobileNav();">
+        🎂 Customize Your Cake
+      </button>
+    </div>
+  </div>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero-title">Our Handcrafted Menu</h1>
+        <div class="breadcrumbs">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span style="color: var(--primary); font-weight: 600;">Menu</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Catalog Section -->
+    <section style="padding: 70px 0 100px; background: var(--secondary);">
+      <div class="container">
+        
+        <!-- Category Filter Tabs & Sorting Toolbar -->
+        <div class="products-toolbar" style="margin-bottom: 40px;">
+          <div class="filter-pills" role="tablist">
+            <button type="button" class="filter-pill active" data-category="all" onclick="filterProducts('all')">All Delicacies</button>
+            <button type="button" class="filter-pill" data-category="birthday-cakes" onclick="filterProducts('birthday-cakes')">Birthday Cakes</button>
+            <button type="button" class="filter-pill" data-category="wedding-cakes" onclick="filterProducts('wedding-cakes')">Wedding Cakes</button>
+            <button type="button" class="filter-pill" data-category="cupcakes" onclick="filterProducts('cupcakes')">Cupcakes</button>
+            <button type="button" class="filter-pill" data-category="donuts" onclick="filterProducts('donuts')">Donuts</button>
+            <button type="button" class="filter-pill" data-category="cookies" onclick="filterProducts('cookies')">Cookies</button>
+            <button type="button" class="filter-pill" data-category="croissants" onclick="filterProducts('croissants')">Croissants</button>
+            <button type="button" class="filter-pill" data-category="bread" onclick="filterProducts('bread')">Fresh Bread</button>
+            <button type="button" class="filter-pill" data-category="pastries" onclick="filterProducts('pastries')">Pastries</button>
+          </div>
+
+          <div class="sort-wrapper">
+            <label for="product-sort" class="sort-label">Sort By:</label>
+            <select id="product-sort" class="sort-select" onchange="sortProducts(this.value)">
+              <option value="featured">Featured Selection</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Top Customer Rated</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Full Menu Products Grid -->
+        <div class="products-grid" id="menu-grid">
+          <!-- Populated dynamically via js/script.js -->
+        </div>
+
+        <!-- Custom Cake CTA Banner -->
+        <div style="margin-top: 80px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); border-radius: var(--radius-lg); padding: 50px 40px; color: #FFFFFF; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px; box-shadow: var(--shadow-lg);">
+          <div style="max-width: 620px;">
+            <span class="section-tag" style="background: rgba(217, 160, 102, 0.2); color: var(--accent); margin-bottom: 10px;">Bespoke Orders</span>
+            <h2 style="font-family: var(--font-heading); font-size: 2rem; color: #FFFFFF; margin-bottom: 12px;">Looking for a Bespoke Custom Cake?</h2>
+            <p style="color: rgba(255, 247, 235, 0.85); font-size: 0.95rem; line-height: 1.6;">
+              From multi-tiered wedding centerpieces to personalized themed photo cakes for children's birthdays, our decorators will create your dream confection tailored to your exact flavor and aesthetic.
+            </p>
+          </div>
+          <div>
+            <button type="button" class="btn btn-accent" onclick="openCustomCakeModal()">
+              <span>Customize Your Cake</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dietary Quality Statement -->
+        <div style="margin-top: 50px; background: #FFFFFF; border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 24px; text-align: center;">
+          <h4 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--primary); margin-bottom: 8px;">Our Quality & Dietary Promise</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
+            All our products are 100% Halal certified, crafted with imported Normandy butter, Belgian chocolate, and free of artificial chemical preservatives. If you have specific nut or lactose allergies, please inform our team upon ordering.
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 12px;">
+            <img src="images/logo.svg" alt="Sweet Crumbs Bakery" class="brand-logo-img">
+          </a>
+          <p class="footer-desc">
+            Sweet Crumbs Bakery is a premium patisserie and artisan bakery founded on passion, pure butter, and unforgettable culinary moments.
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home Page</a></li>
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="menu.html" class="footer-link">Full Bakery Menu</a></li>
+            <li><a href="cart.html" class="footer-link">Shopping Basket</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="menu.html#birthday-cakes" class="footer-link">Birthday Cakes</a></li>
+            <li><a href="menu.html#wedding-cakes" class="footer-link">Wedding Cakes</a></li>
+            <li><a href="menu.html#cupcakes" class="footer-link">Cupcakes</a></li>
+            <li><a href="menu.html#donuts" class="footer-link">Donuts</a></li>
+            <li><a href="menu.html#croissants" class="footer-link">Croissants</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Bakery Hotline</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>+92 (21) 111-222-333</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Clifton Block 5, Karachi (Sample)</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <p>© 2026 Sweet Crumbs Bakery. All rights reserved.</p>
+          <p style="opacity: 0.8; font-size: 0.76rem;">Demonstration Portfolio Project. All business details, prices, and orders are samples.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay" onclick="if(event.target === this) closeCartDrawer();">
+    <aside class="cart-drawer">
+      <div class="cart-header">
+        <div class="cart-header-title">
+          <span>🍰 Your Sweet Basket</span>
+        </div>
+        <button type="button" class="cart-close-btn" onclick="closeCartDrawer()">&times;</button>
+      </div>
+      <div class="free-shipping-meter" id="drawer-shipping-meter"></div>
+      <div class="cart-items-body" id="drawer-items-list"></div>
+      <div class="cart-footer" id="drawer-footer">
+        <div class="cart-totals-row">
+          <span>Subtotal:</span>
+          <strong id="drawer-subtotal">PKR 0</strong>
+        </div>
+        <div class="cart-totals-row">
+          <span>Estimated Delivery:</span>
+          <span id="drawer-delivery">PKR 0</span>
+        </div>
+        <div class="cart-totals-row grand-total">
+          <span>Total:</span>
+          <strong id="drawer-total" style="color: var(--primary);">PKR 0</strong>
+        </div>
+        <div class="cart-actions-box">
+          <a href="checkout.html" class="btn btn-primary" style="width: 100%;">Proceed to Checkout</a>
+          <a href="cart.html" class="btn btn-outline btn-sm" style="width: 100%;">View Full Cart Page</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div class="modal-overlay" id="quick-view-modal" onclick="if(event.target === this) closeAllModals();">
+    <div class="modal-card">
+      <button type="button" class="modal-close-btn" onclick="closeAllModals()">&times;</button>
+      <div class="modal-card-content"></div>
+    </div>
+  </div>
+
+  <!-- Custom Cake Modal -->
+  <div class="modal-overlay" id="custom-cake-modal" onclick="if(event.target === this) closeAllModals();">
+    <div class="modal-card" style="max-width: 680px; padding: 36px 32px;">
+      <button type="button" class="modal-close-btn" onclick="closeAllModals()">&times;</button>
+      <div style="text-align: center; margin-bottom: 24px;">
+        <span class="section-tag" style="margin-bottom: 8px;">Bespoke Confection</span>
+        <h2 style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--primary);">Design Your Dream Cake</h2>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">Tell us about your celebration theme and our pastry artists will bring it to life.</p>
+      </div>
+      <form onsubmit="handleCustomCakeSubmit(event)">
+        <div class="form-group-grid">
+          <div class="form-group">
+            <label class="form-label" for="menu-custom-name">Full Name <span class="req">*</span></label>
+            <input type="text" id="menu-custom-name" name="customer-name" class="form-control" placeholder="e.g. Sana Mir" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="menu-custom-phone">Phone Number (PK) <span class="req">*</span></label>
+            <input type="tel" id="menu-custom-phone" name="customer-phone" class="form-control" placeholder="0300-1234567" required>
+          </div>
+        </div>
+        <div class="form-group-grid">
+          <div class="form-group">
+            <label class="form-label" for="menu-custom-type">Cake Occasion / Type <span class="req">*</span></label>
+            <select id="menu-custom-type" name="cake-type" class="form-control" required>
+              <option value="">Select Cake Type</option>
+              <option value="Birthday Cake">Birthday Celebration Cake</option>
+              <option value="Wedding Cake">Royal Wedding Tier Cake</option>
+              <option value="Anniversary Cake">Anniversary Romantic Cake</option>
+              <option value="Theme Cake">Customized Theme / Character Cake</option>
+              <option value="Photo Cake">Edible Sugar Photo Cake</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="menu-custom-size">Size / Weight <span class="req">*</span></label>
+            <select id="menu-custom-size" name="cake-size" class="form-control" required>
+              <option value="">Select Cake Size</option>
+              <option value="1.5 lbs">1.5 lbs (Serves 4-6)</option>
+              <option value="2.0 lbs">2.0 lbs (Serves 8-10)</option>
+              <option value="3.0 lbs">3.0 lbs (Serves 12-15)</option>
+              <option value="4.0 lbs">4.0 lbs (Serves 18-20)</option>
+              <option value="2-Tier (5.0 lbs)">2-Tier 5.0 lbs (Serves 25-30)</option>
+              <option value="3-Tier (8.0 lbs)">3-Tier 8.0 lbs (Serves 40-50)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group-grid">
+          <div class="form-group">
+            <label class="form-label" for="menu-custom-flavor">Sponge & Filling Flavor <span class="req">*</span></label>
+            <select id="menu-custom-flavor" name="cake-flavor" class="form-control" required>
+              <option value="">Select Flavor</option>
+              <option value="Belgian Chocolate Fudge">Belgian Chocolate Fudge</option>
+              <option value="Red Velvet with Cream Cheese">Red Velvet with Cream Cheese</option>
+              <option value="Lotus Biscoff Salted Caramel">Lotus Biscoff & Salted Caramel</option>
+              <option value="Madagascar Bourbon Vanilla Bean">Madagascar Bourbon Vanilla Bean</option>
+              <option value="Ferrero Rocher Nutella Crunch">Ferrero Rocher Nutella Crunch</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="menu-custom-date">Required Delivery Date <span class="req">*</span></label>
+            <input type="date" id="menu-custom-date" name="cake-date" class="form-control" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="menu-custom-desc">Design Description & Inscription <span class="req">*</span></label>
+          <textarea id="menu-custom-desc" name="cake-desc" class="form-control" rows="3" placeholder="Describe the colors, decorations, message to write on cake..." required></textarea>
+        </div>
+        <div style="background: var(--cream-surface); border: 1px solid var(--border-light); border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 20px; font-size: 0.8rem; color: var(--text-muted);">
+          ℹ️ <strong>Demo Notice:</strong> Submitting this form creates a simulated sample cake request.
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Custom Cake Request</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="modal-overlay" id="search-modal" onclick="if(event.target === this) closeAllModals();">
+    <div class="modal-card search-modal-card">
+      <button type="button" class="modal-close-btn" onclick="closeAllModals()">&times;</button>
+      <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-bottom: 16px;">Search Sweet Crumbs Bakery</h3>
+      <div class="search-input-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="search-query-input" placeholder="Search cakes, cookies, donuts, croissants..." oninput="handleSearchInput(event)">
+      </div>
+      <div class="search-results-list" id="search-results-list"></div>
+    </div>
+  </div>
+
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

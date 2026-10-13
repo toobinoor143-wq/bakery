@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Review your shopping basket at Sweet Crumbs Bakery. Adjust quantities, apply promotional discounts, and proceed to checkout.">
+  <title>Shopping Cart | Sweet Crumbs Bakery</title>
+  
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-message">
+        <span class="top-bar-badge">Checkout Safely</span>
+        <span>✨ Free delivery in Clifton & DHA on orders over PKR 2,500</span>
+      </div>
+      <div class="top-bar-links">
+        <a href="tel:+9221111222333" class="top-bar-link">+92 (21) 111-222-333</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Sweet Crumbs Bakery Home">
+        <img src="images/logo.svg" alt="Sweet Crumbs Bakery" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="menu.html" class="nav-link">Our Menu</a>
+        <a href="menu.html#birthday-cakes" class="nav-link">Special Cakes</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="action-btn" onclick="openSearchModal()" aria-label="Search bakery items">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+
+        <a href="cart.html" class="action-btn" aria-label="View shopping cart" style="border-color: var(--accent); color: var(--accent-dark);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-count" style="display: none;">0</span>
+        </a>
+
+        <a href="menu.html" class="btn btn-primary btn-sm">Browse Menu</a>
+
+        <button type="button" class="hamburger-btn" id="hamburger-btn" onclick="toggleMobileNav()" aria-label="Toggle navigation menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav" id="mobile-nav" onclick="if(event.target === this) closeMobileNav();">
+    <div class="mobile-nav-panel">
+      <div class="mobile-nav-header">
+        <a href="index.html" class="brand-logo" onclick="closeMobileNav()">
+          <img src="images/logo.svg" alt="Sweet Crumbs Bakery" style="height: 42px;">
+        </a>
+        <button type="button" class="mobile-nav-close" onclick="closeMobileNav()" aria-label="Close menu">&times;</button>
+      </div>
+      <div class="mobile-menu-links">
+        <a href="index.html" class="mobile-menu-link" onclick="closeMobileNav()">Home</a>
+        <a href="about.html" class="mobile-menu-link" onclick="closeMobileNav()">About Us</a>
+        <a href="menu.html" class="mobile-menu-link" onclick="closeMobileNav()">Our Menu</a>
+        <a href="cart.html" class="mobile-menu-link active" onclick="closeMobileNav()">My Cart</a>
+        <a href="checkout.html" class="mobile-menu-link" onclick="closeMobileNav()">Checkout</a>
+        <a href="contact.html" class="mobile-menu-link" onclick="closeMobileNav()">Contact</a>
+      </div>
+      <a href="menu.html" class="btn btn-primary" style="width: 100%;" onclick="closeMobileNav()">Browse Menu</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero-title">Your Shopping Basket</h1>
+        <div class="breadcrumbs">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <span style="color: var(--primary); font-weight: 600;">Shopping Cart</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dedicated Cart Page Container -->
+    <section class="cart-page-section">
+      <div class="container" id="cart-page-container">
+        <!-- Rendered dynamically by js/script.js via CartManager.renderCartPageUI() -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="margin-bottom: 12px;">
+            <img src="images/logo.svg" alt="Sweet Crumbs Bakery" class="brand-logo-img">
+          </a>
+          <p class="footer-desc">
+            Sweet Crumbs Bakery is a premium patisserie and artisan bakery founded on passion, pure butter, and unforgettable culinary moments.
+          </p>
+        </div>
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home Page</a></li>
+            <li><a href="about.html" class="footer-link">About Us</a></li>
+            <li><a href="menu.html" class="footer-link">Full Bakery Menu</a></li>
+            <li><a href="cart.html" class="footer-link">Shopping Basket</a></li>
+            <li><a href="checkout.html" class="footer-link">Checkout</a></li>
+            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="menu.html#birthday-cakes" class="footer-link">Birthday Cakes</a></li>
+            <li><a href="menu.html#wedding-cakes" class="footer-link">Wedding Cakes</a></li>
+            <li><a href="menu.html#cupcakes" class="footer-link">Cupcakes</a></li>
+            <li><a href="menu.html#donuts" class="footer-link">Donuts</a></li>
+            <li><a href="menu.html#croissants" class="footer-link">Croissants</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-title">Bakery Hotline</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>+92 (21) 111-222-333</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Clifton Block 5, Karachi (Sample)</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <p>© 2026 Sweet Crumbs Bakery. All rights reserved.</p>
+          <p style="opacity: 0.8; font-size: 0.76rem;">Demonstration Portfolio Project. All business details, prices, and orders are samples.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search Modal -->
+  <div class="modal-overlay" id="search-modal" onclick="if(event.target === this) closeAllModals();">
+    <div class="modal-card search-modal-card">
+      <button type="button" class="modal-close-btn" onclick="closeAllModals()">&times;</button>
+      <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--primary); margin-bottom: 16px;">Search Sweet Crumbs Bakery</h3>
+      <div class="search-input-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="search-query-input" placeholder="Search cakes, cookies, donuts, croissants..." oninput="handleSearchInput(event)">
+      </div>
+      <div class="search-results-list" id="search-results-list"></div>
+    </div>
+  </div>
+
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
